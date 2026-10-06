@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useMemo} from "react";
 import axios from "axios";
 import Cart from "./Cart";
 import { FaRegHeart, FaHeart, FaShoppingCart } from 'react-icons/fa'; 
@@ -9,7 +9,11 @@ function Products() {
   const [products, setProducts] = useState();
   const [cartItems, setCartItems] = useState([]);
   const[page ,setPage]=useState("products");
+ 
 
+  const totalPrice=useMemo(()=>{
+    return cartItems.reduce((acc,item)=> acc+(item.price*item.quantity),0);
+  },[cartItems]);
 
 
   console.log("page render");
@@ -29,8 +33,28 @@ function Products() {
     // console.log("side effect update ");
   }, []);
  const handleCart=(product)=>{
-   setCartItems(()=>{return [...cartItems,product]})
+  //  setCartItems(()=>{return [...cartItems,product]})
+    // setCartItems((prevCartItems) => {
+    //   const existingItemIndex = prevCartItems.findIndex((item) => item.id === product.id);
+    //   if (existingItemIndex !== -1) {
+    //     const updatedCartItems = [...prevCartItems];
+    //     updatedCartItems[existingItemIndex].quantity += 1;
+    //     return updatedCartItems;
+    //   }
+      
+    //   return [...prevCartItems, { ...product, quantity: 1 }];
+    // }); 
+    setCartItems((prevCartItems) => {
+      const existingItemIndex = prevCartItems.find((item) => item.id === product.id);
+      if (existingItemIndex) {
+        return prevCartItems.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      }
+      return [...prevCartItems, { ...product, quantity: 1 }];
+    });
     
+ 
  }
  console.log("cartItems",cartItems);
   // console.log(products?.[0]);
@@ -75,7 +99,7 @@ function Products() {
           );
         })}
       </div>
-    </>:<Cart cartItems={cartItems} setPage={setPage}/>
+    </>:<Cart cartItems={cartItems} setPage={setPage} totalPrice={totalPrice} setCartItems={setCartItems} />
   );
 }
 
