@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FiMinus, FiPlus } from "react-icons/fi";
 function Cart({ cartItems, setPage, totalPrice, setCartItems }) {
   console.log("cartItems in cart component", cartItems);
 
@@ -14,7 +14,14 @@ function Cart({ cartItems, setPage, totalPrice, setCartItems }) {
           }
           return item;
         })
-        .filter(boolean),
+        .filter(Boolean),
+    );
+  };
+  const increament = (id) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
   };
 
@@ -56,6 +63,21 @@ function Cart({ cartItems, setPage, totalPrice, setCartItems }) {
               <p id="product-category">Category: {product.category}</p>
               <p>Quantity: {product.quantity}</p>
               <p>Total: ${product.price * product.quantity}</p>
+              <button
+                className="decrease-icon"
+                onClick={() => decreaseQuantity(product.id)}
+                aria-label="Decrease quantity"
+              >
+                <FiMinus />
+              </button>{" "}
+              <br />
+              <button className="increment-btn"
+                onClick={() => increament(product.id)}
+                aria-label="Increase quantity"
+              >
+                <FiPlus />
+              </button>
+              <br />
               <button
                 onClick={() => removeFromCart(product.id)}
                 style={{ color: "red" }}
