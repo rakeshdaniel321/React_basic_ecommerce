@@ -1,0 +1,9 @@
+#navbar-cintainer{
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.navbar-cintainer{
+    
+}

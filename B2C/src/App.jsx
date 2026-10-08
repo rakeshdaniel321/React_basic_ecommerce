@@ -1,5 +1,6 @@
 
 import './App.css'
+import AppRoutes from './AppRoutes'
 import Home from './pages/Home'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Home/>
+    <AppRoutes/>
     </>
   )
 }
