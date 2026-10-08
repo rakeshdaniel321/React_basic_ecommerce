@@ -1,9 +1,38 @@
 #navbar-cintainer{
-    border: 1px solid;
+    /* border: 1px solid; */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: sticky;
+    top:0;
+    padding: 20px;
 
 }
-.navbar-cintainer{
-    
+#nav-Left{
+    /* border: 2px solid red; */
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#nav-right{
+    /* border: 2px solid green; */
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+.nav-link:hover{
+    color: rgba(63, 118, 63, 0.762);
+    text-decoration: underline;
+}
+#nav-Left span{
+    color: red;
+    font-weight: 700;   
+}
+#addToCart-btn{
+    color:red;
 }

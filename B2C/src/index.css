@@ -25,21 +25,23 @@
   height: 200px;
   object-fit: contain;
 }
-.product-Card h3 {
+.Products-Container h3 {
   font-size: 18px;
   margin: 10px 0;
   text-align: center;
   text-transform: capitalize;
   font-family: "Courier New", Courier, monospace;
   cursor: default;
+  text-align: center;
 }
-.product-Card #product-price {
+.Products-Container #product-price {
   font-size: 16px;
   color: red;
   font-family: "Courier New", Courier, monospace;
   cursor: default;
+  text-align: center;
 }
-.productCard p {
+.product-Card p {
   font-size: 16px;
   color: #555;
   text-align: center;
@@ -88,7 +90,7 @@
   border-radius: 12px;
   padding: 6px;
   color: red;
-  bottom: 100px;
+  bottom: 72px;
   left: 260px;
 }
 .decrease-icon:hover {
@@ -96,4 +98,23 @@
 }
 .increment-btn:hover {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#removecart-btn{
+  border: 1px solid rgba(161, 29, 29, 0.622);
+  padding: 7px;
+  margin: 2px;
+  background:linear-gradient(rgb(196, 37, 37),rgb(41, 39, 39)) ;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-family: 'Courier New', Courier, monospace;
+}
+#removecart-btn:hover{
+border: 1px solid rgba(64, 125, 61, 0.622);
+  background:linear-gradient(rgb(65, 155, 95),rgb(41, 39, 39)) ;
+  color: black;
+  
+  cursor: pointer;
 }

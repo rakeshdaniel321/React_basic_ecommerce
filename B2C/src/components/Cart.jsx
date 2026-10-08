@@ -29,8 +29,8 @@ function Cart() {
             <div className="product-Card" key={product.id}>
               <img src={product.thumbnail} alt={product.title} />
               <h3>{product.title}</h3>
-              <p>Price: ${product.price}</p>
-              <p>Quantity: {product.quantity}</p>
+              <p id="product-price">Price: ${product.price}</p>
+              <p id="product-quentity">Quantity: {product.quantity}</p>
               <p>Total: ${(product.price * product.quantity).toFixed(2)}</p>
 
               <button
@@ -47,9 +47,9 @@ function Cart() {
                 <FiMinus />
               </button>
 
-              <button
+              <button id="removecart-btn"
                 onClick={() => dispatch(removeFromCart(product.id))}
-                style={{ color: "red", marginLeft: "10px" }}
+                
               >
                 Remove
               </button>

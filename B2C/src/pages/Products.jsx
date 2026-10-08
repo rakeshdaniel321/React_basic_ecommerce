@@ -18,7 +18,6 @@ function Products() {
 
   return (
     <div>
-        <Link to="/cart">bbb</Link>
       <div className="Products-Container">
         {products.map((product) => (
           <div className="product-card" key={product.id}>
@@ -28,7 +27,7 @@ function Products() {
 
             <p id="product-price">${product.price}</p>
 
-            <button onClick={() =>{ console.log("Clicked:", product); handleCart(product)} }>Add to Cart</button>
+            <button id="addToCart-btn" onClick={() =>{ console.log("Clicked:", product); handleCart(product)} }><FaRegHeart/></button>
           </div>
         ))}
       </div>
