@@ -121,3 +121,8 @@ border: 1px solid rgba(64, 125, 61, 0.622);
   cursor: pointer;
 }
 
+#products-box{
+  border:9px solid;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
