@@ -1,4 +1,5 @@
 import React from 'react'
+import Products from './Products'
 
 
 
@@ -6,7 +7,7 @@ import React from 'react'
 function Home() {
   return (
    <>
-  
+    <Products/>
    </>
   )
 }

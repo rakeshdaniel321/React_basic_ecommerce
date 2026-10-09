@@ -5,10 +5,23 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './stores/store.js'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
 createRoot(document.getElementById('root')).render(
     <Provider store={store}>
   <BrowserRouter>
     <App />
+    <ToastContainer
+      position="top-right"
+      autoClose={2500}
+      hideProgressBar={false}
+      newestOnTop
+      closeOnClick
+      pauseOnHover
+      draggable
+      theme="light"
+    />
  </BrowserRouter>
  </Provider>
 );

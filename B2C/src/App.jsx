@@ -8,10 +8,10 @@ function App() {
   
 
   return (
-    <>
+    <div id="app-container">
     <Navbar/>
     <AppRoutes/>
-    </>
+    </div>
   )
 }
 

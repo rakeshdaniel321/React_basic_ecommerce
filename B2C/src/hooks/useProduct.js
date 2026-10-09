@@ -2,11 +2,14 @@ import { useState, useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import  {fetchData}  from '../api/productApi';
 import { addToCart } from "../stores/CartSlice";
+import { showSuccess } from "../components/Toast/Toast";
+
+
+
 export function useProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
@@ -42,6 +45,8 @@ export function useProducts() {
     const handleCart = (product) => {
         // console.log("handleCart product before:", product);
         dispatch(addToCart(product));
+            showSuccess(`${product.title} Added To Cart`)
+
         //  console.log("dispatch completed after");
     };
 

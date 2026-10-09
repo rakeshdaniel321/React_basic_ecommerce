@@ -6,13 +6,15 @@
   padding: 0;
   scroll-behavior: smooth;
   scrollbar-width: none;
+ 
 }
+
 .Products-Container {
   /* border: 1px solid black; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 80px;
+   padding: 120px 80px 80px;
 }
 .product-card {
   border: 1px solid rgb(233, 231, 231);
@@ -48,7 +50,7 @@
   font-family: "Courier New", Courier, monospace;
   cursor: default;
 }
-.productCard img:hover {
+.Products-Container img:hover {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
@@ -118,3 +120,4 @@ border: 1px solid rgba(64, 125, 61, 0.622);
   
   cursor: pointer;
 }
+

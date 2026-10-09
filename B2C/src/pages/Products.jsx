@@ -21,13 +21,18 @@ function Products() {
       <div className="Products-Container">
         {products.map((product) => (
           <div className="product-card" key={product.id}>
+            <button
+              id="addToCart-btn"
+              onClick={() => {
+                console.log("Clicked:", product);
+                handleCart(product);
+              }}
+            >
+              <FaRegHeart />
+            </button>
             <img src={product.thumbnail} alt={product.title} />
-
             <h3>{product.title}</h3>
-
             <p id="product-price">${product.price}</p>
-
-            <button id="addToCart-btn" onClick={() =>{ console.log("Clicked:", product); handleCart(product)} }><FaRegHeart/></button>
           </div>
         ))}
       </div>

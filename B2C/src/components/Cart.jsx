@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { increment, decrement, removeFromCart } from "../stores/CartSlice";
+import { showSuccess } from "./Toast/Toast";
 
 function Cart() {
 
@@ -19,14 +20,15 @@ function Cart() {
 
   return (
     <div>
-      <p>Total Price: ${totalPrice.toFixed(2)}</p>
-
+       <p id="Total-price-tag">Total Price: ${totalPrice.toFixed(2)}</p>
       <div className="Products-Container">
         {cartItems?.length === 0 ? (
           <h2>Your cart is empty! 🛒</h2>
         ) : (
+               
           cartItems.map((product) => (
             <div className="product-Card" key={product.id}>
+             
               <img src={product.thumbnail} alt={product.title} />
               <h3>{product.title}</h3>
               <p id="product-price">Price: ${product.price}</p>
@@ -48,7 +50,8 @@ function Cart() {
               </button>
 
               <button id="removecart-btn"
-                onClick={() => dispatch(removeFromCart(product.id))}
+                onClick={() => {dispatch(removeFromCart(product.id));
+                  showSuccess(`${product.title} Remove successfully`)}}
                 
               >
                 Remove
