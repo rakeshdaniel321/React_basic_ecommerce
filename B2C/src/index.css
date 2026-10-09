@@ -15,12 +15,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
    padding: 120px 80px 80px;
+   height: auto;
 }
 .product-card {
   border: 1px solid rgb(233, 231, 231);
   padding: 10px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: 450px;
 }
 .product-Card img {
   width: 100%;
@@ -104,7 +106,7 @@
 #removecart-btn{
   border: 1px solid rgba(161, 29, 29, 0.622);
   padding: 7px;
-  margin: 2px;
+  margin-top: 7px;
   background:linear-gradient(rgb(196, 37, 37),rgb(41, 39, 39)) ;
   border-radius: 12px;
   color: white;
@@ -117,12 +119,11 @@
 border: 1px solid rgba(64, 125, 61, 0.622);
   background:linear-gradient(rgb(65, 155, 95),rgb(41, 39, 39)) ;
   color: black;
-  
   cursor: pointer;
 }
 
 #products-box{
-  border:9px solid;
+  /* border:9px solid; */
   display: grid;
   grid-template-columns: 300px 1fr;
 }

@@ -83,8 +83,7 @@ export function useProducts() {
             const matchCategory = selectedCategory === "all" || product.category === selectedCategory;
             const matchBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
 
-            const matchPrice =
-                Number(product.price) <= (maxPrice ?? priceCap);
+            const matchPrice = Number(product.price) <= (maxPrice ?? priceCap);
 
             return matchCategory && matchBrand && matchPrice;
         });
@@ -139,6 +138,7 @@ export function useProducts() {
         setSelectedBrands([]);
         setMaxPrice(null);
         setSortBy("default");
+        showSuccess(`Filter Clear All`);
     };
 
 

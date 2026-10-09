@@ -35,7 +35,7 @@ function ProductFilters({
           <option value="all">All Categories</option>
 
           {categories.map((category) => (
-            <option key={category} value={category}>
+            <option id="categroy-option" style={{color:"green",scrollbarWidth:"none"}} key={category} value={category}>
               {category}
             </option>
           ))}
